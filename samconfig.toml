@@ -1,7 +1,7 @@
 version = 0.1
 
 [dev.deploy.parameters]
-stack_name = "tams-dev"
+stack_name = "tams-api-dev"
 resolve_s3 = true
 s3_prefix = "tams-dev"
 region = "eu-west-1"
@@ -15,7 +15,7 @@ tags = [
 ]
 
 [prod.deploy.parameters]
-stack_name = "tams"
+stack_name = "tams-api"
 resolve_s3 = true
 s3_prefix = "tams"
 region = "eu-west-1"
