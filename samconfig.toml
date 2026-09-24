@@ -1,0 +1,32 @@
+version = 0.1
+
+[dev.deploy.parameters]
+stack_name = "tams-dev"
+resolve_s3 = true
+s3_prefix = "tams-dev"
+region = "eu-west-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "VpcId=\"vpc-0d47a388c8c81be12\" VpcAZs=\"eu-west-1a,eu-west-1b\" PrivateSubnetIds=\"subnet-094c3f66b5e86debf,subnet-09655fc43093c1c51\" NeptuneDBInstanceClass=\"db.t4g.medium\" NeptuneServerlessConfiguration=\"1,128\" DeployWaf=\"No\" JwtIssuerUrl=\"\" LambdaAuthorizerArn=\"\""
+image_repositories = []
+tags = [
+    "Owner=Alex Jones",
+    "Environment=Development",
+    "Product=TAMS"
+]
+
+[prod.deploy.parameters]
+stack_name = "tams"
+resolve_s3 = true
+s3_prefix = "tams"
+region = "eu-west-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "VpcId=\"vpc-0d47a388c8c81be12\" VpcAZs=\"eu-west-1a,eu-west-1b\" PrivateSubnetIds=\"subnet-094c3f66b5e86debf,subnet-09655fc43093c1c51\" NeptuneDBInstanceClass=\"db.t4g.medium\" NeptuneServerlessConfiguration=\"1,128\" DeployWaf=\"No\" JwtIssuerUrl=\"\" LambdaAuthorizerArn=\"\""
+image_repositories = []
+tags = [
+    "Owner=Alex Jones",
+    "Environment=Production",
+    "Product=TAMS"
+]
+
+[dev.global.parameters]
+region = "eu-west-1"
